@@ -7,10 +7,10 @@ import { useState } from 'react';
 function App() {
 
   const [userInput, setUserInput] = useState({
-    initialInvestment: 0,
-    annualInvestment: 0,
-    expectedReturn: 0,
-    duration: 0,
+    initialInvestment: 100,
+    annualInvestment: 100,
+    expectedReturn: 1000,
+    duration: 5,
   });
 
   // function handleChange(e) {
@@ -20,11 +20,13 @@ function App() {
   //   });
   // }
 
+  const inputIsValid = userInput.duration > 0 && userInput.expectedReturn > 0;
+
   function handleChange(inputIdentifier, value) {
     setUserInput((prevUserInput) => {
       return {
       ...prevUserInput,
-      [inputIdentifier]: value,
+      [inputIdentifier]: +value,
       };
     }
     );
@@ -34,7 +36,8 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      <Results userInput={userInput} />
+      {!inputIsValid && <p>Invalid input</p>} 
+      {inputIsValid && <Results input={userInput} />}
     </>
   )
 }

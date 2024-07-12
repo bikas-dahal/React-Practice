@@ -20,8 +20,8 @@ export default function UserInputComponent({ onChange:handleChange,  userInput }
           <label>Annual Investment</label>
           <input
             type="number"
-            name="annualInvestment"
-            id="annualInvestment"
+            // name="annualInvestment"
+            // id="annualInvestment"
             required
             value={userInput.annualInvestment}
             onChange={(e) => handleChange("annualInvestment", e.target.value)}
