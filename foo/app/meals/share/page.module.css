@@ -22,6 +22,7 @@
   width: 90%;
   max-width: 75rem;
   margin: 3rem auto;
+  color: white;
 }
 
 .form {
@@ -86,4 +87,12 @@
 .actions button:hover,
 .actions button:focus {
   background: linear-gradient(90deg, #fd4715, #f9b241);
+}
+
+.actions button:disabled,
+.actions button:hover:disabled,
+.actions button:focus:disabled {
+  background: #ccc;
+  color: #979797;
+  cursor: not-allowed;
 }
