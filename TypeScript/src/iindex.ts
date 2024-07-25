@@ -32,3 +32,14 @@ interface Bootle{
 
 identityThree<Bootle>({brand: "Fanta", size: 2});
 
+
+function getPro <T>(obj: T[]): T{
+    const i = 3
+    return obj[i];
+}
+
+const getProo = <T,>(obj: T[]):T =>{
+    const i = 3
+    return obj[i];
+}
+
