@@ -1,20 +1,26 @@
+import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
+// import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button"
+// import { zodResolver } from "@hookform/resolvers/zod";
+
+
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+
 import { SignupValidation } from "@/lib/validation"
-import { z } from "zod"
+
 import Loader from "@/components/shared/Loader"
 import { Link } from "react-router-dom"
+import { createUserAccount } from "@/lib/appwrite/api"
 
 
 
@@ -35,10 +41,11 @@ const signupForm = () => {
   })
  
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof SignupValidation>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
+  async function onSubmit(values: z.infer<typeof SignupValidation>) {
+
+    const newUser = await createUserAccount(values)
+
+    console.log(newUser)
   }
 
   return (
