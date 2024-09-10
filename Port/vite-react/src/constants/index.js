@@ -20,7 +20,6 @@ export const navLinks = [
       href: '#contact',
     },
   ];
-  
   export const clientReviews = [
     {
       id: 1,
@@ -28,7 +27,7 @@ export const navLinks = [
       position: 'Marketing Director at GreenLeaf',
       img: 'assets/review1.png',
       review:
-        'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
+        'Working with Bikas was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
     },
     {
       id: 2,
@@ -36,15 +35,15 @@ export const navLinks = [
       position: 'Founder of TechGear Shop',
       img: 'assets/review2.png',
       review:
-        'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
+        'Bikas’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
     },
     {
       id: 3,
       name: 'John Dohsas',
-      position: 'Project Manager at UrbanTech ',
+      position: 'Project Manager at UrbanTech',
       img: 'assets/review3.png',
       review:
-        'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
+        'I can’t say enough good things about Bikas. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
     },
     {
       id: 4,
@@ -52,9 +51,10 @@ export const navLinks = [
       position: 'CEO of BrightStar Enterprises',
       img: 'assets/review4.png',
       review:
-        'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
+        'Bikas was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.',
     },
   ];
+  
   
   export const myProjects = [
     {
@@ -260,28 +260,28 @@ export const navLinks = [
   export const workExperiences = [
     {
       id: 1,
-      name: 'Framer',
-      pos: 'Lead Web Developer',
+      name: 'TechCraft Solutions',
+      pos: 'Lead Fullstack Developer',
       duration: '2022 - Present',
-      title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
+      title: "As Lead Fullstack Developer at TechCraft, I spearheaded the development of scalable web applications using Next.js, React, and Node.js. My role involved leading the engineering team, ensuring efficient development workflows, and overseeing project architecture.",
       icon: '/assets/framer.svg',
       animation: 'victory',
     },
     {
       id: 2,
-      name: 'Figma',
-      pos: 'Web Developer',
+      name: 'PixelWeb Studio',
+      pos: 'Frontend Developer',
       duration: '2020 - 2022',
-      title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
+      title: "At PixelWeb Studio, I focused on creating responsive, visually appealing web applications using React and Tailwind CSS. I collaborated with designers and backend developers to deliver seamless user experiences, ensuring performance and accessibility standards were met.",
       icon: '/assets/figma.svg',
       animation: 'clapping',
     },
     {
       id: 3,
-      name: 'Notion',
+      name: 'CodeSphere Solutions',
       pos: 'Junior Web Developer',
       duration: '2019 - 2020',
-      title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
+      title: "During my time at CodeSphere Solutions, I worked closely with senior developers to build dynamic websites. I enhanced my skills in JavaScript, HTML, CSS, and backend integrations, contributing to both client and internal projects.",
       icon: '/assets/notion.svg',
       animation: 'salute',
     },
