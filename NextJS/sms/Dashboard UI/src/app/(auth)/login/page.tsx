@@ -1,10 +1,6 @@
-import React from 'react'
-
-type Props = {}
-
-const LoginPage = (props: Props) => {
+const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <div className=''>LoginPage</div>
   )
 }
 
