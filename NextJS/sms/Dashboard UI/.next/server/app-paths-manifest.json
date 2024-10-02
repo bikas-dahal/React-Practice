@@ -1,5 +1,6 @@
 {
-  "/page": "app/page.js",
-  "/(dashboard)/student/page": "app/(dashboard)/student/page.js",
-  "/(dashboard)/admin/page": "app/(dashboard)/admin/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(dashboard)/list/teachers/page": "app/(dashboard)/list/teachers/page.js",
+  "/(dashboard)/list/teachers/[id]/page": "app/(dashboard)/list/teachers/[id]/page.js",
+  "/(dashboard)/list/parents/page": "app/(dashboard)/list/parents/page.js"
 }

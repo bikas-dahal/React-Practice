@@ -20,8 +20,9 @@ model Student {
     email       String?   @unique
     phone       String?
     address     String
-    img         String
+    img         String?
     bloodType   String
+    birthday    DateTime
     gender      userGender
     createdAt   DateTime   @default(now()) 
     parentId    String
@@ -33,7 +34,7 @@ model Student {
     gradeId     Int
     grade       Grade      @relation(fields: [gradeId], references: [id])
 
-    attendences Attendence[]
+    attendances Attendance[]
     results     Result[]
 
 
@@ -47,14 +48,15 @@ model Teacher {
     email       String?    @unique
     phone       String?     @unique
     address     String
-    img         String
+    birthday    DateTime
+    img         String?
     bloodType   String
     gender      userGender
     createdAt   DateTime   @default(now()) 
     subjects    Subject[]
     lessons     Lesson[]
     classes     Class[]
-    attendences Attendence[]
+    attendances Attendance[]
 
 }
 
@@ -82,7 +84,7 @@ model Grade {
 model Class {
     id              Int     @id @default(autoincrement())
     name            String  @unique
-    capcity         Int
+    capacity         Int
     lessons         Lesson[]
 
     supervisorId    String?
@@ -92,7 +94,7 @@ model Class {
     gradeId     Int
     grade       Grade      @relation(fields: [gradeId], references: [id])
 
-    student         Student[]
+    students         Student[]
     announcements   Announcement[]
     events          Event[]
 }
@@ -122,7 +124,7 @@ model Lesson {
 
     exams       Exam[]
     assignments Assignment[]
-    attendences Attendence[]
+    attendances Attendance[]
 }
 
 model Exam {
@@ -164,7 +166,7 @@ model Result {
     student        Student    @relation(fields: [studentId], references: [id])
 }
 
-model Attendence {
+model Attendance {
     id          Int     @id @default(autoincrement())
     date        DateTime
     present      Boolean
@@ -175,8 +177,8 @@ model Attendence {
     lessonId   Int
     lesson     Lesson @relation(fields: [lessonId], references: [id])
 
-    teacherId   String
-    teacher     Teacher @relation(fields: [teacherId], references: [id])
+    teacherId   String?
+    teacher     Teacher? @relation(fields: [teacherId], references: [id])
 
 }
 
@@ -193,7 +195,7 @@ model Event {
 }
 
 model Announcement {
-    id      String      @unique
+    id      Int      @unique @id @default(autoincrement())
     title   String
     description     String
     date    DateTime

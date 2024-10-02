@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
+    "@prisma/client": "^5.20.0",
     "next": "14.2.5",
     "prisma": "^5.19.1",
     "react": "^18",
@@ -18,6 +19,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.53.0",
     "recharts": "^2.12.7",
+    "ts-node": "^10.9.2",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -32,6 +34,6 @@
     "typescript": "^5"
   },
   "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   }
 }
