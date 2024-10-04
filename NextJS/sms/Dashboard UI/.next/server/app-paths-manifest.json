@@ -1,10 +1,8 @@
 {
-  "/page": "app/page.js",
-  "/(dashboard)/list/classes/page": "app/(dashboard)/list/classes/page.js",
-  "/(dashboard)/list/teachers/page": "app/(dashboard)/list/teachers/page.js",
-  "/(dashboard)/list/lessons/page": "app/(dashboard)/list/lessons/page.js",
   "/(dashboard)/list/students/page": "app/(dashboard)/list/students/page.js",
-  "/(dashboard)/list/teachers/[id]/page": "app/(dashboard)/list/teachers/[id]/page.js",
-  "/(dashboard)/list/parents/page": "app/(dashboard)/list/parents/page.js",
-  "/(dashboard)/list/subjects/page": "app/(dashboard)/list/subjects/page.js"
+  "/(dashboard)/list/lessons/page": "app/(dashboard)/list/lessons/page.js",
+  "/(dashboard)/list/assignments/page": "app/(dashboard)/list/assignments/page.js",
+  "/(dashboard)/list/results/page": "app/(dashboard)/list/results/page.js",
+  "/(dashboard)/list/events/page": "app/(dashboard)/list/events/page.js",
+  "/(dashboard)/list/announcements/page": "app/(dashboard)/list/announcements/page.js"
 }

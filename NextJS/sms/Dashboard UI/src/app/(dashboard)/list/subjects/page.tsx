@@ -72,6 +72,8 @@ const SubjectListPage = async ({ searchParams }: { searchParams: { [key: string]
               mode: "insensitive",
             }
             break;
+            default:
+              break;
         }
       }
     }

@@ -65,7 +65,7 @@ const renderRow = (item: ExamList) => (
   </tr>
 );
 
-const ExamListPage = (async ({ searchParams }: { searchParams: { [key: string]: string | undefined }}) => {
+const ExamListPage = async ({ searchParams }: { searchParams: { [key: string]: string | undefined }}) => {
 
   const { page, ...queryParams } = searchParams;
 
@@ -80,7 +80,7 @@ const ExamListPage = (async ({ searchParams }: { searchParams: { [key: string]: 
       if (value !== undefined) {
         switch (key) {
           case "classId":
-            query.classId = parseInt(value);
+            query.lesson = { classId: parseInt(value)}
             break;
           case "search":
             query.lesson ={
@@ -88,12 +88,14 @@ const ExamListPage = (async ({ searchParams }: { searchParams: { [key: string]: 
             }
             break;
           case "teacherId":
-              query.teacherId = value
+              query.lesson = { teacherId: value }
             break
+            default:
+              break;
         }
-    }
+    } }
   }
-}
+
 
   const [data, count ] = await prisma.$transaction([
     prisma.exam.findMany({
@@ -110,7 +112,7 @@ const ExamListPage = (async ({ searchParams }: { searchParams: { [key: string]: 
       take: ITEM_PER_PAGE,
       skip: (p - 1) * ITEM_PER_PAGE
     }),
-    prisma.lesson.count({ where: query })
+    prisma.exam.count({ where: query })
   ])
 
   return (
@@ -132,11 +134,11 @@ const ExamListPage = (async ({ searchParams }: { searchParams: { [key: string]: 
         </div>
       </div>
       {/* LIST */}
-      <Table columns={columns} renderRow={renderRow} data={examsData} />
+      <Table columns={columns} renderRow={renderRow} data={data} />
       {/* PAGINATION */}
-      <Pagination />
+      <Pagination page={p} count={count} />
     </div>
   );
-};
+}
 
 export default ExamListPage;

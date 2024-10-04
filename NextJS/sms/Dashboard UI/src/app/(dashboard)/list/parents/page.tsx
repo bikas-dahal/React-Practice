@@ -94,6 +94,8 @@ const ParentListPage = async ({ searchParams }: {
               mode: "insensitive",
             }
             break;
+          default:
+              break;
         }
       }
     }

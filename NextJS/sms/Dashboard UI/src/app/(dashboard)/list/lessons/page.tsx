@@ -84,6 +84,8 @@ const LessonListPage = async ({ searchParams }: { searchParams: { [key: string]:
           case "teacherId":
               query.teacherId = value
             break
+            default:
+              break;
         }
     }
   }

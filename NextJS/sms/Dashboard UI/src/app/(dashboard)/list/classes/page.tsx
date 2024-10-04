@@ -87,6 +87,8 @@ const ClassListPage = async ({ searchParams }: { searchParams: { [key: string]: 
           case 'supervisorId':
             query.supervisorId = value
             break;
+            default:
+              break;
       }
     }
   }
