@@ -1,5 +1,24 @@
 {
-  "node": {},
+  "node": {
+    "8d2d5fc835cad1697c19c1024ef9918aae6ed521": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CReact%5C%5CNextJS%5C%5Csms%5C%5CDashboard%20UI%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
+        "app/(auth)/[[...sign-in]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CReact%5C%5CNextJS%5C%5Csms%5C%5CDashboard%20UI%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
+        "app/_not-found/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CReact%5C%5CNextJS%5C%5Csms%5C%5CDashboard%20UI%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
+        "app/(dashboard)/admin/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CReact%5C%5CNextJS%5C%5Csms%5C%5CDashboard%20UI%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
+        "app/(dashboard)/teacher/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CReact%5C%5CNextJS%5C%5Csms%5C%5CDashboard%20UI%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
+        "app/(dashboard)/student/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CReact%5C%5CNextJS%5C%5Csms%5C%5CDashboard%20UI%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/(auth)/[[...sign-in]]/page": "action-browser",
+        "app/_not-found/page": "action-browser",
+        "app/(dashboard)/admin/page": "action-browser",
+        "app/(dashboard)/teacher/page": "action-browser",
+        "app/(dashboard)/student/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "rSfQ3KKuraEGQTtD8ob9ct8YBKzdozjpAg9hCgjbsIA="
+  "encryptionKey": "5JBgv43foLQawxxdyBtllGgn8jkggbT4JwIPpBwcATI="
 }

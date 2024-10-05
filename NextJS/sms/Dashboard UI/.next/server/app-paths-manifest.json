@@ -1,8 +1,8 @@
 {
-  "/(dashboard)/list/students/page": "app/(dashboard)/list/students/page.js",
-  "/(dashboard)/list/lessons/page": "app/(dashboard)/list/lessons/page.js",
-  "/(dashboard)/list/assignments/page": "app/(dashboard)/list/assignments/page.js",
-  "/(dashboard)/list/results/page": "app/(dashboard)/list/results/page.js",
-  "/(dashboard)/list/events/page": "app/(dashboard)/list/events/page.js",
-  "/(dashboard)/list/announcements/page": "app/(dashboard)/list/announcements/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(auth)/[[...sign-in]]/page": "app/(auth)/[[...sign-in]]/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(dashboard)/admin/page": "app/(dashboard)/admin/page.js",
+  "/(dashboard)/teacher/page": "app/(dashboard)/teacher/page.js",
+  "/(dashboard)/student/page": "app/(dashboard)/student/page.js"
 }

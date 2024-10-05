@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components\\\\FormModal.tsx -> ./forms/StudentForm\":{\"id\":\"components\\\\FormModal.tsx -> ./forms/StudentForm\",\"files\":[\"static/chunks/_app-pages-browser_src_components_forms_StudentForm_tsx.js\"]},\"components\\\\FormModal.tsx -> ./forms/TeacherForm\":{\"id\":\"components\\\\FormModal.tsx -> ./forms/TeacherForm\",\"files\":[\"static/chunks/_app-pages-browser_src_components_forms_TeacherForm_tsx.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"
