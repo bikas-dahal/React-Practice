@@ -1,4 +1,5 @@
 import { role } from "@/lib/data";
+import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -117,7 +118,13 @@ const menuItems = [
   },
 ];
 
-const Menu = () => {
+const Menu = async () => {
+
+  const user = await currentUser();
+  const role = user?.publicMetadata?.role;
+
+  
+
   return (
     <div className="mt-1 text-sm overflow-hidden h-full">
       {menuItems.map((i) => (
