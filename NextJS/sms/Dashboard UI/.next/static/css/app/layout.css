@@ -614,10 +614,6 @@ video {
 .m-auto {
   margin: auto;
 }
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -792,9 +788,6 @@ video {
 }
 .self-center {
   align-self: center;
-}
-.overflow-hidden {
-  overflow: hidden;
 }
 .overflow-scroll {
   overflow: scroll;

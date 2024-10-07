@@ -1,9 +1,4 @@
 {
-  "/(auth)/[[...sign-in]]/page": "app/(auth)/[[...sign-in]]/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(dashboard)/teacher/page": "app/(dashboard)/teacher/page.js",
-  "/(dashboard)/list/classes/page": "app/(dashboard)/list/classes/page.js",
-  "/(dashboard)/list/exams/page": "app/(dashboard)/list/exams/page.js",
-  "/(dashboard)/list/parents/page": "app/(dashboard)/list/parents/page.js",
-  "/(dashboard)/list/results/page": "app/(dashboard)/list/results/page.js"
+  "/(dashboard)/teacher/page": "app/(dashboard)/teacher/page.js"
 }
