@@ -14,14 +14,29 @@ import { FcGoogle } from "react-icons/fc";
 import { SignInFlow } from "../types";
 import { useState } from "react";
 
+import { useAuthActions } from '@convex-dev/auth/react'
+
+
+
 interface SignInProps {
     setState: (state: SignInFlow) => void
 }
 
 export const SignInCard = ({ setState }: SignInProps) => {
 
+  const { signIn } = useAuthActions()
+
     const [email, setEmail] = useState<string>("")
     const [password, setPassword] = useState<string>("")
+    const [pending, setPending] = useState<boolean>(false)
+
+  const onProviderSignIn = (value: "github" | "google") => {
+    setPending(true)
+    signIn(value)
+    .finally(() => {
+      setPending(false)
+    })
+  }
 
   return (
     <Card className="w-full h-full p-6">
@@ -39,7 +54,7 @@ export const SignInCard = ({ setState }: SignInProps) => {
             className="w-full"
             id="email"
             name="email"
-            disabled={false}
+            disabled={pending}
             value={email}
             onChange={(e) => {setEmail(e.target.value)}}
             required
@@ -50,12 +65,12 @@ export const SignInCard = ({ setState }: SignInProps) => {
             className="w-full"
             id="password"
             name="password"
-            disabled={false}
+            disabled={pending}
             value={password}
             onChange={(e) => {setPassword(e.target.value)}}
             required
           />
-          <Button type="submit" className="w-full" size={"lg"} disabled={false}>
+          <Button type="submit" className="w-full" size={"lg"} disabled={pending}>
             Continue
           </Button>
         </form>
@@ -63,8 +78,8 @@ export const SignInCard = ({ setState }: SignInProps) => {
         <div className="flex flex-col gap-y-2">
           <Button
             variant={"outline"}
-            disabled={false}
-            onClick={() => {}}
+            disabled={pending}
+            onClick={() => {onProviderSignIn('google')}}
             size={"lg"}
             className="w-full relative"
           >
@@ -74,8 +89,8 @@ export const SignInCard = ({ setState }: SignInProps) => {
           </Button>
           <Button
             variant={"outline"}
-            disabled={false}
-            onClick={() => {}}
+            disabled={pending}
+            onClick={() => {onProviderSignIn('github')}}
             size={"lg"}
             className="w-full relative"
           >
