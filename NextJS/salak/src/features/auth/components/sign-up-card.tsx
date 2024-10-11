@@ -13,16 +13,51 @@ import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { SignInFlow } from "../types";
 import { useState } from "react";
+import { TriangleAlert } from "lucide-react";
+import { useAuthActions } from "@convex-dev/auth/react";
+import { on } from "events";
 
 interface SignUpProps {
     setState: (state: SignInFlow) => void
 }
 
 export const SignUpCard = ({ setState }: SignUpProps) => {
-    
+
+  const { signIn } = useAuthActions()
+
+    const [name, setName] = useState<string>("")
     const [email, setEmail] = useState<string>("")
     const [password, setPassword] = useState<string>("")
     const [confirmPassword, setConfirmPassword] = useState<string>("")
+    const [pending, setPending] = useState<boolean>(false)
+    const [error, setError] = useState<string>("")
+
+    const onPasswordSignUp = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      
+      if (password !== confirmPassword) {
+        setError("Passwords do not match")
+        return
+      }
+      
+      setPending(true)
+
+      signIn("password", { name, email, password, flow: "signUp" })
+      .catch(() => {
+        setError("Something went wrong 😟")
+      })
+      .finally(() => {
+        setPending(false)
+      })
+    }
+
+    const onProviderSignUp = (value: "github" | "google") => {
+      setPending(true)
+      signIn(value)
+      .finally(() => {
+        setPending(false)
+      })
+    }
 
   return (
     <Card className="w-full h-full p-6">
@@ -32,15 +67,31 @@ export const SignUpCard = ({ setState }: SignUpProps) => {
           Use your email or another service to continue
         </CardDescription>
       </CardHeader>
+      {!!error && (
+        <div className="text-red-500 bg-destructive/15 mb-4 rounded-md flex items-center gap-x-2 p-3 text-sm">
+          <TriangleAlert className="size-5" />
+          <p>{error}</p>
+        </div>
+      )}
       <CardContent className="space-y-4 px-0 pb-0">
-        <form className="space-y-2.5">
+        <form onSubmit={onPasswordSignUp} className="space-y-2.5">
+        <Input
+            placeholder="Full Name"
+            className="w-full"
+            id="name"
+            name="name"
+            disabled={pending}
+            value={name}
+            onChange={(e) => {setName(e.target.value)}}
+            required
+          />
           <Input
             type="email"
             placeholder="Email"
             className="w-full"
             id="email"
             name="email"
-            disabled={false}
+            disabled={pending}
             value={email}
             onChange={(e) => {setEmail(e.target.value)}}
             required
@@ -51,7 +102,7 @@ export const SignUpCard = ({ setState }: SignUpProps) => {
             className="w-full"
             id="password"
             name="password"
-            disabled={false}
+            disabled={pending}
             value={password}
             onChange={(e) => {setPassword(e.target.value)}}
             required
@@ -61,12 +112,12 @@ export const SignUpCard = ({ setState }: SignUpProps) => {
             placeholder="Confirm Password"
             className="w-full"
             id="password"
-            disabled={false}
+            disabled={pending}
             value={confirmPassword}
             onChange={(e) => {setConfirmPassword(e.target.value)}}
             required
           />
-          <Button type="submit" className="w-full" size={"lg"} disabled={false}>
+          <Button type="submit" className="w-full" size={"lg"} disabled={pending}>
             Continue
           </Button>
         </form>
@@ -74,8 +125,8 @@ export const SignUpCard = ({ setState }: SignUpProps) => {
         <div className="flex flex-col gap-y-2">
           <Button
             variant={"outline"}
-            disabled={false}
-            onClick={() => {}}
+            disabled={pending}
+            onClick={() => {onProviderSignUp("google")}}
             size={"lg"}
             className="w-full relative"
           >
@@ -85,8 +136,8 @@ export const SignUpCard = ({ setState }: SignUpProps) => {
           </Button>
           <Button
             variant={"outline"}
-            disabled={false}
-            onClick={() => {}}
+            disabled={pending}
+            onClick={() => {onProviderSignUp("github")}}
             size={"lg"}
             className="w-full relative"
           >
