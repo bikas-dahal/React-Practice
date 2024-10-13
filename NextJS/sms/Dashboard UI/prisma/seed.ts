@@ -1,4 +1,4 @@
-import { Day, PrismaClient, userGender } from "@prisma/client";
+import { Day, PrismaClient, UserSex } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
@@ -26,7 +26,7 @@ async function main() {
   }
 
   // CLASS
-  for (let i = 1; i <= 6; i++) { 
+  for (let i = 1; i <= 6; i++) {
     await prisma.class.create({
       data: {
         name: `${i}A`, 
@@ -66,7 +66,7 @@ async function main() {
         phone: `123-456-789${i}`,
         address: `Address${i}`,
         bloodType: "A+",
-        gender: i % 2 === 0 ? userGender.MALE : userGender.FEMALE,
+        sex: i % 2 === 0 ? UserSex.MALE : UserSex.FEMALE,
         subjects: { connect: [{ id: (i % 10) + 1 }] }, 
         classes: { connect: [{ id: (i % 6) + 1 }] }, 
         birthday: new Date(new Date().setFullYear(new Date().getFullYear() - 30)),
@@ -120,7 +120,7 @@ async function main() {
         phone: `987-654-321${i}`,
         address: `Address${i}`,
         bloodType: "O-",
-        gender: i % 2 === 0 ? userGender.MALE : userGender.FEMALE,
+        sex: i % 2 === 0 ? UserSex.MALE : UserSex.FEMALE,
         parentId: `parentId${Math.ceil(i / 2) % 25 || 25}`, 
         gradeId: (i % 6) + 1, 
         classId: (i % 6) + 1, 

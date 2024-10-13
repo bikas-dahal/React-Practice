@@ -4,12 +4,12 @@ import prisma from "@/lib/prisma";
 
 const CountChartContainer = async () => {
   const data = await prisma.student.groupBy({
-    by: ["gender"],
+    by: ["sex"],
     _count: true,
   });
 
-  const boys = data.find((d) => d.gender === "MALE")?._count || 0;
-  const girls = data.find((d) => d.gender === "FEMALE")?._count || 0;
+  const boys = data.find((d) => d.sex === "MALE")?._count || 0;
+  const girls = data.find((d) => d.sex === "FEMALE")?._count || 0;
 
   return (
     <div className="bg-white rounded-xl w-full h-full p-4">

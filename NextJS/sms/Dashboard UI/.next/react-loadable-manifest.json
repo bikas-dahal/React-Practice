@@ -1,1 +1,32 @@
-{}
+{
+  "components\\FormModal.tsx -> ./forms/ClassForm": {
+    "id": "components\\FormModal.tsx -> ./forms/ClassForm",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_forms_ClassForm_tsx.js"
+    ]
+  },
+  "components\\FormModal.tsx -> ./forms/ExamForm": {
+    "id": "components\\FormModal.tsx -> ./forms/ExamForm",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_forms_ExamForm_tsx.js"
+    ]
+  },
+  "components\\FormModal.tsx -> ./forms/StudentForm": {
+    "id": "components\\FormModal.tsx -> ./forms/StudentForm",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_forms_StudentForm_tsx.js"
+    ]
+  },
+  "components\\FormModal.tsx -> ./forms/SubjectForm": {
+    "id": "components\\FormModal.tsx -> ./forms/SubjectForm",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_forms_SubjectForm_tsx.js"
+    ]
+  },
+  "components\\FormModal.tsx -> ./forms/TeacherForm": {
+    "id": "components\\FormModal.tsx -> ./forms/TeacherForm",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_forms_TeacherForm_tsx.js"
+    ]
+  }
+}
