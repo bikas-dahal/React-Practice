@@ -1,5 +1,6 @@
 'use client'
 
+import { Sidebar } from "./sidebar";
 import ToolBar from "./toolbar";
 
 interface WorkspaceIdLayoutProps {
@@ -10,7 +11,11 @@ const WorkspaceIdLayout = ({ children }: WorkspaceIdLayoutProps) => {
     return (
         <div className="h-screen flex">
             <ToolBar />
-            {children}
+            <div className="flex h-[calc(100vh-40px)]">
+                <Sidebar />
+                {children}
+
+            </div>
         </div>
     );
 }
