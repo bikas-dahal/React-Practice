@@ -37,11 +37,11 @@ export const WorkspaceSwitcher = () => {
                     <DropdownMenuItem
                         key={workspace._id}
                         onClick={() => router.push(`/workspace/${workspace._id}`)}
-                        className="cursor-pointer flex-col justify-start items-start capitalize"
+                        className="cursor-pointer flex-col justify-start items-start capitalize overflow-hidden"
                     >
-                        <div className="size-9 overflow-hidden relative bg-[#616061] text-white font-semibold text-lg rounded-md flex items-center justify-center mr-2">
-                            {workspace.name.charAt(0).toUpperCase() + workspace.name.slice(1)}
-                            <span className="text-xs text-muted-foreground">{workspace.name}</span>
+                        <div className="shrink-0 size-9 overflow-hidden relative bg-[#616061] text-white font-semibold text-lg rounded-md flex items-center justify-center mr-2">
+                            {workspace.name.charAt(0).toUpperCase()}
+                            <p className="truncate">{workspace.name}</p>
                         </div>
                     </DropdownMenuItem>
                 ))}
